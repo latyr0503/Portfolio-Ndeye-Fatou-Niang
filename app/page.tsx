@@ -120,14 +120,30 @@ export default function Home() {
             {/* Category: Tech */}
             <div>
               <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 border-b border-background/20 pb-4">
-                <span className="bg-primary p-2 rounded-lg text-primary-foreground">💻</span> UGC Tech Content
+                <span className="bg-primary p-2 rounded-lg text-primary-foreground shadow-md shadow-primary/20">💻</span> UGC Tech Content
               </h3>
-              <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory hide-scrollbar">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-8">
                 {["Tayeur Gestion", "IMT Dakar", "Jips", "Goat Tech", "Numssms", "IZI premium", "Meloafrik"].map((project, i) => (
-                  <div key={i} className="snap-center shrink-0 w-64 sm:w-72 aspect-[9/16] rounded-2xl bg-background/5 border border-background/10 relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent flex flex-col justify-end p-6">
-                      <h4 className="font-bold text-xl">{project}</h4>
-                      <p className="text-sm text-background/70">Voir le projet →</p>
+                  <div key={i} className="group relative w-full aspect-[9/16] rounded-2xl bg-black/20 border border-background/10 overflow-hidden cursor-pointer hover:border-primary/50 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(122,32,51,0.25)] hover:-translate-y-1">
+                    
+                    {/* Background Placeholder avec effet zoom */}
+                    <div className="absolute inset-0 bg-background/5 group-hover:scale-105 transition-transform duration-700"></div>
+                    
+                    {/* Overlay Bouton Play */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                      <div className="h-16 w-16 rounded-full bg-primary/90 text-primary-foreground flex items-center justify-center shadow-[0_0_20px_rgba(122,32,51,0.4)] backdrop-blur-sm transform scale-50 group-hover:scale-100 transition-transform duration-500 ease-out">
+                        <MonitorPlay className="h-7 w-7 ml-1" />
+                      </div>
+                    </div>
+
+                    {/* Gradient et Contenu */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 z-20">
+                      <h4 className="font-bold text-xl text-white transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">{project}</h4>
+                      <div className="overflow-hidden mt-2">
+                        <p className="text-sm text-primary font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out">
+                          Voir le projet <ArrowRight className="h-4 w-4" />
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -137,13 +153,30 @@ export default function Home() {
             {/* Category: Beauté */}
             <div>
               <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 border-b border-background/20 pb-4">
-                <span className="bg-primary p-2 rounded-lg text-primary-foreground">💄</span> UGC Beauté &amp; Bien-être
+                <span className="bg-primary p-2 rounded-lg text-primary-foreground shadow-md shadow-primary/20">💄</span> UGC Beauté &amp; Bien-être
               </h3>
-              <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory hide-scrollbar">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-8">
                 {["Mayi Welness", "Aura Afrique", "Cherifa Cosmetic", "KND CHIC"].map((project, i) => (
-                  <div key={i} className="snap-center shrink-0 w-64 sm:w-72 aspect-[9/16] rounded-2xl bg-background/5 border border-background/10 relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent flex flex-col justify-end p-6">
-                      <h4 className="font-bold text-xl">{project}</h4>
+                  <div key={i} className="group relative w-full aspect-[9/16] rounded-2xl bg-black/20 border border-background/10 overflow-hidden cursor-pointer hover:border-primary/50 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(122,32,51,0.25)] hover:-translate-y-1">
+                    
+                    {/* Background Placeholder avec effet zoom */}
+                    <div className="absolute inset-0 bg-background/5 group-hover:scale-105 transition-transform duration-700"></div>
+                    
+                    {/* Overlay Bouton Play */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                      <div className="h-16 w-16 rounded-full bg-primary/90 text-primary-foreground flex items-center justify-center shadow-[0_0_20px_rgba(122,32,51,0.4)] backdrop-blur-sm transform scale-50 group-hover:scale-100 transition-transform duration-500 ease-out">
+                        <MonitorPlay className="h-7 w-7 ml-1" />
+                      </div>
+                    </div>
+
+                    {/* Gradient et Contenu */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 z-20">
+                      <h4 className="font-bold text-xl text-white transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">{project}</h4>
+                      <div className="overflow-hidden mt-2">
+                        <p className="text-sm text-primary font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out">
+                          Voir le projet <ArrowRight className="h-4 w-4" />
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -153,13 +186,30 @@ export default function Home() {
             {/* Category: Actrice Pub */}
             <div>
               <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 border-b border-background/20 pb-4">
-                <span className="bg-primary p-2 rounded-lg text-primary-foreground">🎬</span> Actrice Pub
+                <span className="bg-primary p-2 rounded-lg text-primary-foreground shadow-md shadow-primary/20">🎬</span> Actrice Pub
               </h3>
-              <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory hide-scrollbar">
-                <div className="snap-center shrink-0 w-64 sm:w-72 aspect-[9/16] rounded-2xl bg-background/5 border border-background/10 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent flex flex-col justify-end p-6">
-                    <h4 className="font-bold text-xl">Shell</h4>
-                    <p className="text-sm text-background/70">Campagne &quot;GO WILL&quot;</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-8">
+                <div className="group relative w-full aspect-[9/16] rounded-2xl bg-black/20 border border-background/10 overflow-hidden cursor-pointer hover:border-primary/50 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(122,32,51,0.25)] hover:-translate-y-1">
+                  
+                  {/* Background Placeholder avec effet zoom */}
+                  <div className="absolute inset-0 bg-background/5 group-hover:scale-105 transition-transform duration-700"></div>
+                  
+                  {/* Overlay Bouton Play */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                    <div className="h-16 w-16 rounded-full bg-primary/90 text-primary-foreground flex items-center justify-center shadow-[0_0_20px_rgba(122,32,51,0.4)] backdrop-blur-sm transform scale-50 group-hover:scale-100 transition-transform duration-500 ease-out">
+                      <MonitorPlay className="h-7 w-7 ml-1" />
+                    </div>
+                  </div>
+
+                  {/* Gradient et Contenu */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 z-20">
+                    <h4 className="font-bold text-xl text-white transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">Shell</h4>
+                    <p className="text-sm text-background/70 mb-2 transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">Campagne &quot;GO WILL&quot;</p>
+                    <div className="overflow-hidden mt-1">
+                      <p className="text-sm text-primary font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out">
+                        Voir le projet <ArrowRight className="h-4 w-4" />
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
