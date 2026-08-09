@@ -19,7 +19,7 @@ export async function getContent(id: string) {
 export async function getAllContent() {
   try {
     const allContent = await prisma.pageContent.findMany()
-    const contentMap = allContent.reduce((acc, curr) => {
+    const contentMap = allContent.reduce((acc: Record<string, string>, curr: any) => {
       acc[curr.id] = curr.content
       return acc
     }, {} as Record<string, string>)
