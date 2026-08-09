@@ -3,6 +3,7 @@ import { Geist_Mono, Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner"
+import { Analytics } from "@vercel/analytics/next"
 
 const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
 
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body>
         {children}
         <Toaster />
+        <Analytics />
       </body>
     </html>
   )
