@@ -1,8 +1,8 @@
 import { Geist_Mono, Inter, Playfair_Display } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/sonner"
 
 const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
 
@@ -25,7 +25,8 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, playfairDisplayHeading.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        {children}
+        <Toaster />
       </body>
     </html>
   )
